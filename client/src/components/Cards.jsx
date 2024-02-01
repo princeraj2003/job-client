@@ -22,25 +22,26 @@ export default function Cards({Company}) {
               Company Name: {item?.employer_name}
             </p>
             <p className="font-semibold text-black px-3">
-              Phone: {item?.employer_company_type}
+              Job Title: {item?.job_title}
             </p>
             <p className="text-justify font-semibold text-black px-3">
-              Address: {item?.job_description.slice(0,300)}
+              Job Description: {item?.job_description.slice(0,550)}
             </p>
-            <div className="flex justify-center mt-4 gap-4">
-              <a
-                target="_blank"
-                href={item?.job_is_remote}
-                className="w-[40] inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                <button>Location</button>
-              </a>
+            <p className="text-justify font-semibold text-black px-3">
+              Job City: {item?.job_city}
+            </p>
+            <p className="text-justify font-semibold text-black px-3">
+              Employment Type: {item?.job_employment_type}
+            </p>
+            
+            <div className="flex justify-center mt-4 ">
+              
               <a
                 target="_blank"
                 href={item?.job_apply_link}
                 className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                <button>Visit Website</button>
+                <button>Apply Now</button>
               </a>
             </div>
           </div>
