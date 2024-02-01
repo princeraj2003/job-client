@@ -1,8 +1,36 @@
 import React, { useContext } from "react";
 import UserContext from "../context/UserContext";
+import axios from 'axios';
+
+
 
 export default function Cards() {
   const { comp, setComp } = useContext(UserContext);
+  async function fetchDataFromJobSearchAPI(req, res) {
+    const options = {
+      method: 'GET',
+      url: 'https://job-search-api1.p.rapidapi.com/v1/job-description-search',
+      params: {
+        q: 'data science internship',
+        page: '1',
+        country: 'india',
+        city: 'gurugram',
+      },
+      headers: {
+        'X-RapidAPI-Key': '07c05c07d6msh4d8b6bfafd52f1fp1a6cbfjsn1765f358b68c',
+        'X-RapidAPI-Host': 'job-search-api1.p.rapidapi.com',
+      },
+    };
+  
+    try {
+      const response = await axios.request(options);
+      console.log(response?.data);
+      res.json(response?.data);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
   return (
     <div className="flex flex-col gap-8 justify-center items-center relative z-[5]">
       <h1 className="text-center text-3xl sm:text-5xl font-bold text-gradient1 mt-10 mb-4">Here are the List of Companies that Provide Jobs/Internship!</h1>

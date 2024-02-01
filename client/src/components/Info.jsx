@@ -3,8 +3,8 @@ import UserContext from "../context/UserContext";
 import axios from "axios";
 
 export default function Info() {
-  const { field, setfield, place, setPlace} = useContext(UserContext);
-
+  // const { field, setfield, place, setPlace } = useContext(UserContext);
+  const { field, setfield, place, setPlace } = useContext(UserContext);
   const handleClick = async () => {
     try {
       // Send the data to the backend
@@ -17,7 +17,7 @@ export default function Info() {
 
       // Handle the response as needed
       console.log(response?.data?.data);
-      
+
     } catch (error) {
       console.error('Error sending data to the backend', error);
     }
@@ -30,30 +30,29 @@ export default function Info() {
       </div>
       <div className="w-[90%] p-2 box-background">
         <div className="p-5 flex flex-col justify-center">
-          <h5 className="text-center mb-10 text-3xl font-bold tracking-tight text-gray-900 dark:text-black">
+          <h5 className="text-center mt-12 text-3xl font-bold tracking-tight text-gray-900 dark:text-black">
             jobs.
           </h5>
           <label className="flex flex-col text-black font-semibold sm:text-xl gap-2">
             Enter Your Domain:
             <input
               type="text"
-              placeholder="SDE INTERN, SDE JOB, MARKETING,SALES,DEVOPS ETC "
-              value={field}
-              onChange={(e) => setfield(e.target.value)}
-              className="text-white h-[40px] border-white sm:w-[60%] bg-[#070708] rounded-full px-4"
+              placeholder="Enter your text here"
+              value={fie}
+              onChange={(e) =>  setfield(e.target.value) }
             />
           </label>
           <label className="flex flex-col mt-10 text-black font-semibold sm:text-xl gap-2">
             Enter Your Preferred location:
             <input
               type="text"
-              placeholder="Your location...."
+              placeholder="Enter your location"
               value={place}
               onChange={(e) => setPlace(e.target.value)}
-              className="text-white h-[40px] border-white sm:w-[60%] bg-[#070708] rounded-full px-4"
+              className="text-white h-[40px] border-white sm:w-[60%] bg-[#505050] rounded-full px-4"
             />
-            {console.log(place, field)}
           </label>
+          {console.log(place, field)}
           <div className="flex justify-center mt-5">
             <button className="rounded-xl inline-flex items-center px-3 py-2 font-semibold text-center text-white bg-blue-700 hover:bg-blue-800" onClick={handleClick}> Submit!</button>
           </div>
