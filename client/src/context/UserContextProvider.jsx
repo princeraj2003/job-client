@@ -7,7 +7,7 @@ const UserContextProvider=({children})=>{
   
     const [field,setfield]=React.useState("")
     const [place,setPlace]=React.useState("")
-    const [Comp,setComp]=React.useState()
+    const [Comp,setComp]=React.useState("")
     
     return(
         <UserContext.Provider value={{field,setfield,place,setPlace,Comp,setComp}}>

@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from "axios";
+import Cards from './Cards';
 
 export default function Info2() {
     const [field, setField] = useState('');
@@ -14,16 +15,15 @@ export default function Info2() {
             // Send the data to the backend
             const options = {
                 method: 'GET',
-                url: 'https://job-search-api1.p.rapidapi.com/v1/job-description-search',
+                url: 'https://jsearch.p.rapidapi.com/search',
                 params: {
-                  q: {field},
+                  query: `${field} in ${location}`,
                   page: '1',
-                //   country: 'us',
-                  city: {location}
+                  num_pages: '1'
                 },
                 headers: {
-                  'X-RapidAPI-Key': 'fffe97ee22msh8d122f21cf26e35p1b8331jsn5848a1391175',
-                  'X-RapidAPI-Host': 'job-search-api1.p.rapidapi.com'
+                  'X-RapidAPI-Key': '07c05c07d6msh4d8b6bfafd52f1fp1a6cbfjsn1765f358b68c',
+                  'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
                 }
               };
               
@@ -44,9 +44,9 @@ export default function Info2() {
     };
     useEffect(() => {
         handleClick()
-  
-      }, [response])
+      }, [])
     return (
+        <>
 <div className='w-full flex justify-center'>
   <div className='w-[80%] font-center'>
     <h1 className='mt-24 text-[3.5rem] text-center'>Find your Dream Position Here!</h1>
@@ -76,6 +76,8 @@ export default function Info2() {
     {console.log(field, location)}
   </div>
 </div>
+<Cards Company={response?.data?.data} />
+</>
 
     )
 }
