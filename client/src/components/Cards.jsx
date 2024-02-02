@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 
 export default function Cards({Company}) {
   return (
-    <div className="flex flex-col gap-8 justify-center items-center relative z-[5]">
+    <div className="flex flex-col gap-8 justify-center items-center relative z-10">
       <h1 className="text-center text-3xl sm:text-5xl font-bold text-gradient1 mt-10 mb-4">Here are the List of Companies that Provide Jobs/Internship!</h1>
       <div className="flex flex-wrap justify-center gap-6 mb-10 w-[90%] sm:w-full">
       {/* {console.log(Company)} */}
