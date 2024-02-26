@@ -22,8 +22,8 @@ export default function Info2() {
                   num_pages: '1'
                 },
                 headers: {
-                  'X-RapidAPI-Key': '07c05c07d6msh4d8b6bfafd52f1fp1a6cbfjsn1765f358b68c',
-                  'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+                  'X-RapidAPI-Key': 'ad3a8ebe22msh214895c63b0598ap13c572jsn601db0b8a9ca',
+    'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
                 }
               };
               
